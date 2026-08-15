@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/sts"
 	saml2alibabacloud "github.com/aliyun/saml2alibabacloud"
 	"github.com/aliyun/saml2alibabacloud/helper/credentials"
@@ -268,6 +269,7 @@ func loginToStsUsingRole(account *cfg.IDPAccount, role *saml2alibabacloud.RamRol
 	request.RoleArn = role.RoleARN
 	request.SAMLAssertion = samlAssertion
 	request.SAMLProviderArn = role.PrincipalARN
+	request.DurationSeconds = requests.NewInteger(account.SessionDuration)
 
 	log.Println("Requesting AlibabaCloud credentials using SAML assertion")
 
