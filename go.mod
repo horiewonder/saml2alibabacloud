@@ -17,8 +17,8 @@ require (
 	github.com/keybase/go-keychain v0.0.1
 	github.com/marshallbrekka/go-u2fhost v0.0.0-20210111072507-3ccdec8c8105
 	github.com/mitchellh/go-homedir v1.1.0
+	github.com/mxschmitt/playwright-go v0.6201.1
 	github.com/pkg/errors v0.9.1
-	github.com/playwright-community/playwright-go v0.6000.0
 	github.com/sirupsen/logrus v1.10.2
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
 	github.com/stretchr/testify v1.12.1
@@ -43,7 +43,6 @@ require (
 	github.com/creack/pty v1.1.20 // indirect
 	github.com/deckarep/golang-set/v2 v2.9.0 // indirect
 	github.com/dvsekhvalnov/jose2go v1.11.0 // indirect
-	github.com/go-jose/go-jose/v3 v3.0.5 // indirect
 	github.com/go-stack/stack v1.8.1 // indirect
 	github.com/godbus/dbus v4.1.0+incompatible // indirect
 	github.com/gsterjov/go-libsecret v0.0.0-20161001094733-a6f4afe4910c // indirect

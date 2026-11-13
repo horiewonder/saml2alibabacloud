@@ -9,7 +9,7 @@ import (
 
 	"github.com/aliyun/saml2alibabacloud/pkg/cfg"
 	"github.com/aliyun/saml2alibabacloud/pkg/creds"
-	"github.com/playwright-community/playwright-go"
+	"github.com/mxschmitt/playwright-go"
 	"github.com/sirupsen/logrus"
 )
 
