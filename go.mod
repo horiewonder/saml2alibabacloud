@@ -1,8 +1,6 @@
 module github.com/aliyun/saml2alibabacloud
 
-go 1.22
-
-toolchain go1.24.0
+go 1.25.0
 
 require (
 	github.com/99designs/keyring v1.2.2
@@ -25,7 +23,7 @@ require (
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
 	github.com/stretchr/testify v1.10.0
 	github.com/tidwall/gjson v1.17.0
-	golang.org/x/net v0.24.0
+	golang.org/x/net v0.54.0
 	gopkg.in/ini.v1 v1.57.0
 )
 
@@ -60,10 +58,10 @@ require (
 	github.com/stretchr/objx v0.5.2 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.1 // indirect
-	golang.org/x/crypto v0.32.0 // indirect
-	golang.org/x/sys v0.29.0 // indirect
-	golang.org/x/term v0.28.0 // indirect
-	golang.org/x/text v0.21.0 // indirect
+	golang.org/x/crypto v0.52.0 // indirect
+	golang.org/x/sys v0.45.0 // indirect
+	golang.org/x/term v0.43.0 // indirect
+	golang.org/x/text v0.37.0 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
