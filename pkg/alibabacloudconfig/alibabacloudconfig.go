@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	config "github.com/aliyun/aliyun-cli/config"
+	config "github.com/aliyun/aliyun-cli/v3/config"
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
@@ -66,7 +66,7 @@ func (p *CredentialsProvider) CredsExists() (bool, error) {
 
 // Save persist the credentials
 func (p *CredentialsProvider) Save(alibabacloudCreds *AliCloudCredentials) error {
-	configuration, err := config.LoadConfiguration(config.GetConfigPath()+"/config.json", os.Stdout)
+	configuration, err := config.LoadOrCreateConfiguration(filepath.Join(config.GetConfigPath(), "config.json"))
 	if err != nil {
 		return err
 	}
@@ -91,7 +91,7 @@ func (p *CredentialsProvider) Load() (*AliCloudCredentials, error) {
 		return nil, err
 	}
 
-	configuration, err := config.LoadConfiguration(config.GetConfigPath()+"/config.json", os.Stdout)
+	configuration, err := config.LoadOrCreateConfiguration(filepath.Join(config.GetConfigPath(), "config.json"))
 	if err != nil {
 		return nil, err
 	}

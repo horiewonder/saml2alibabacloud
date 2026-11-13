@@ -145,7 +145,7 @@ func verifyMfa(oc *Client, shibbolethHost string, resp string) (*http.Response, 
 
 	duoHost, postAction, tx, app := parseTokens(resp)
 
-	parent := fmt.Sprintf(shibbolethHost + postAction)
+	parent := shibbolethHost + postAction
 
 	duoTxCookie, err := verifyDuoMfa(oc, duoHost, parent, tx)
 	if err != nil {
