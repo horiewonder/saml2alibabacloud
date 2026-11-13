@@ -21,15 +21,15 @@ jobs:
     steps:
 
     - name: Check out code into the Go module directory
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
 
     - name: Set up Go
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v7
       with:
         go-version-file: "go.mod"
 
     - name: GoReleaser
-      uses: goreleaser/goreleaser-action@v6
+      uses: goreleaser/goreleaser-action@v7
       with:
-        version: latest
+        version: "~> v2"
         args: build --snapshot --clean --config .goreleaser.${{ matrix.os }}.yaml
