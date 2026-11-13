@@ -1,7 +1,7 @@
 project_name: saml2alibabacloud
 release:
   github:
-    owner: aliyun
+    owner: horiewonder
     name: saml2alibabacloud
 
 builds:

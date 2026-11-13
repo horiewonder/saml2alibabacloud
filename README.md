@@ -2,6 +2,22 @@
 
 [中文文档](README_zh.md)
 
+> [!NOTE]
+> このリポジトリは [aliyun/saml2alibabacloud](https://github.com/aliyun/saml2alibabacloud) の社内配布用 fork です。
+>
+> 公式版との主な差分は次のとおりです。
+>
+> - `alibabacloud_session_duration` を AssumeRoleWithSAML の `DurationSeconds` に渡すようにしています（[aliyun/saml2alibabacloud#25](https://github.com/aliyun/saml2alibabacloud/pull/25) を取り込み）。公式版 v3.0.4 では設定値に関係なく STS トークンが 3600 秒で失効します。
+> - 依存ライブラリを更新し、Dependabot で継続的に更新しています。
+>
+> リリースは `v3.0.4-wp.1` のような `-wp.N` 付きのタグで [Releases](https://github.com/horiewonder/saml2alibabacloud/releases) に公開します。
+>
+> STS トークンを最大 12 時間有効にするには、`~/.saml2alibabacloud` の各アカウントに次の設定を追加してください。RAM ロールの最大セッション時間（MaxSessionDuration）も 43200 秒以上に設定されている必要があります。
+>
+> ```ini
+> alibabacloud_session_duration = 43200
+> ```
+
 CLI tool which enables you to login and retrieve [AlibabaCloud](https://www.aliyun.com/) temporary credentials using 
 with [ADFS](https://msdn.microsoft.com/en-us/library/bb897402.aspx) or [PingFederate](https://www.pingidentity.com/en/products/pingfederate.html) Identity Providers.
 

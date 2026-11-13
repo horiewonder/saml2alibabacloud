@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: gomod
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      golang-x:
+        patterns:
+          - golang.org/x/*
+      alibabacloud:
+        patterns:
+          - github.com/aliyun/*
+          - github.com/alibabacloud-go/*
+    ignore:
+      # v3.5.x depends on the unpublished github.com/aliyun/aliyun-openapi-runtime
+      # module via a local replace directive and cannot be used as a library.
+      - dependency-name: github.com/aliyun/aliyun-cli/v3
+        versions:
+          - ">= 3.5.0"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
