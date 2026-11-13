@@ -8,6 +8,7 @@ import (
 	"runtime"
 
 	"github.com/alecthomas/kingpin"
+	saml2alibabacloud "github.com/aliyun/saml2alibabacloud"
 	"github.com/aliyun/saml2alibabacloud/cmd/saml2alibabacloud/commands"
 	"github.com/aliyun/saml2alibabacloud/pkg/flags"
 	"github.com/sirupsen/logrus"
@@ -66,7 +67,7 @@ func main() {
 	commonFlags := new(flags.CommonFlags)
 	app.Flag("config", "Path/filename of saml2alibabacloud config file (env: SAML2ALIBABACLOUD_CONFIGFILE)").Envar("SAML2ALIBABACLOUD_CONFIGFILE").StringVar(&commonFlags.ConfigFile)
 	app.Flag("idp-account", "The name of the configured IDP account. (env: SAML2ALIBABACLOUD_IDP_ACCOUNT)").Envar("SAML2ALIBABACLOUD_IDP_ACCOUNT").Short('a').Default("default").StringVar(&commonFlags.IdpAccount)
-	app.Flag("idp-provider", "The configured IDP provider. (env: SAML2ALIBABACLOUD_IDP_PROVIDER)").Envar("SAML2ALIBABACLOUD_IDP_PROVIDER").EnumVar(&commonFlags.IdpProvider, "Akamai", "AzureAD", "ADFS", "ADFS2", "GoogleApps", "Ping", "JumpCloud", "Okta", "OneLogin", "PSU", "KeyCloak", "F5APM", "Shibboleth", "ShibbolethECP", "NetIQ")
+	app.Flag("idp-provider", "The configured IDP provider. (env: SAML2ALIBABACLOUD_IDP_PROVIDER)").Envar("SAML2ALIBABACLOUD_IDP_PROVIDER").EnumVar(&commonFlags.IdpProvider, saml2alibabacloud.MFAsByProvider.Names()...)
 	app.Flag("mfa", "The name of the mfa. (env: SAML2ALIBABACLOUD_MFA)").Envar("SAML2ALIBABACLOUD_MFA").StringVar(&commonFlags.MFA)
 	app.Flag("skip-verify", "Skip verification of server certificate. (env: SAML2ALIBABACLOUD_SKIP_VERIFY)").Envar("SAML2ALIBABACLOUD_SKIP_VERIFY").Short('s').BoolVar(&commonFlags.SkipVerify)
 	app.Flag("url", "The URL of the SAML IDP server used to login. (env: SAML2ALIBABACLOUD_URL)").Envar("SAML2ALIBABACLOUD_URL").StringVar(&commonFlags.URL)
