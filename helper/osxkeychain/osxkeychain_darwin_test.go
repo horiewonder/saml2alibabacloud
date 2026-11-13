@@ -145,7 +145,7 @@ func TestOSXKeychainHelperRetrieveAliases(t *testing.T) {
 func TestOSXKeychainHelperStoreWithUncleanPath(t *testing.T) {
 	helper := Osxkeychain{}
 	creds := &credentials.Credentials{
-		ServerURL: "https://::1:8080//////location/../../hello",
+		ServerURL: "https://[::1]:8080//////location/../../hello",
 		Username:  "testuser",
 		Secret:    "testsecret",
 	}
